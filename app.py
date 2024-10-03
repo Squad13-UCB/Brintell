@@ -12,9 +12,9 @@ openai.api_key = ''
 def index():
     """
     Roteia para a página principal do projeto.
-    Serve o arquivo 'index.html' da pasta 'templates'.
+    Serve o arquivo 'chat-bot.html' da pasta 'templates'.
     """
-    return send_from_directory('templates', 'index.html')
+    return send_from_directory('templates', 'chat-bot.html')
 
 @app.route('/ask', methods=['POST'])
 def ask_openai():
