@@ -7,6 +7,9 @@ function selectLink() {
         item.classList.remove('active')
     )
     this.classList.add('active');
+
+    // Armazenar o ID do item
+    localStorage.setItem('activeMenuItem', this.id);
 }
 
 menuItem.forEach((item) =>
@@ -19,4 +22,14 @@ var menuSide = document.querySelector('#menu')
 
 btnExp.addEventListener('click', function() {
     menuSide.classList.toggle('active')
+})
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    const activeItemId = localStorage.getItem('activeMenuItem');
+    if (activeItemId) {
+        const activeItem = document.getElementById(activeItemId);
+        if (activeItem) {
+            activeItem.classList.add('active')
+        }
+    }
 })
