@@ -1,3 +1,21 @@
+@charset "UTF-8";
+
+/* Variaveis globais */
+:root { 
+    --dark-blue: #131c23;
+    --blue: #2274a4;
+    --light-blue: #4882c2;
+    --blue-gray: #2f4858; 
+    --dark-gray-blue: #020303;     
+    --gray: #86898e;
+    --light-gray: #7d8e98;
+
+    --gitlab: #FCA121;
+    --whatsapp: #25D366;
+    --instagram: #E1306C;
+    --facebook: #3B5998;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
-    background-color: #131b22;
+    background-color: var(--dark-blue);
 }
 
 
@@ -53,12 +71,12 @@ body {
     top: 0;
     left: 0;
     overflow: hidden;
-    transition: 2s;
+    transition: 1s;
 }
 
 /* Linhhas */
 .line {
-    background-color: #2f373e;
+    background-color: var(--blue-gray);
     width: 90%;
     height: 5px;
     border-radius: 1rem;
@@ -70,7 +88,7 @@ body {
 #top-menu {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Altura inicial suficiente para o ícone */
+    align-items: flex-start;
 }
 
 #menu.active #top-menu {
@@ -116,8 +134,7 @@ body {
 #menu.active .bnss .icon {
     display: inline;
     font-size: 2.4rem;
-    transition: transform 0.5s; 
-    transition: 2s;
+    transition: transform 0.8s; 
 }
 
 #menu.active .bnss .txt-link {
@@ -126,19 +143,18 @@ body {
     font-weight: bold;
     white-space: nowrap;
     padding-left: 0.6rem;
-    transition: opacity 0.6s;
-    transition: 2s;
+    transition: opacity 0.8s;
 }
 
 .expandir {
     margin-left: 23%;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 #menu.active .expandir {
     margin-left: 0%;
     transition: margin-left 0.5s;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .expandir {
@@ -148,7 +164,7 @@ body {
 }
 
 .expandir:hover {
-    color: rgb(88, 104, 255);
+    color: var(--blue-gray);
 }
 
 .siderbar {
@@ -162,12 +178,12 @@ body {
 }
 
 ul li:hover a {
-    color: rgb(88, 104, 255);
+    color: var(--blue-gray);
 }
 
 ul li.active a {
     transition: 0.4s;
-    color: rgb(35, 156, 255);
+    color: var(--light-blue);
 }
 
 
@@ -263,23 +279,23 @@ ul li.active a {
 .social-icon i {
     text-decoration: none;
     color: black;
-    transition: 0.3s;
+    transition: 0.2s ease;
 }
 
 .bi-gitlab:hover {
-    color: #FCA121;
+    color: var(--gitlab);
 }
 
 .bi-whatsapp:hover {
-    color: #25D366;
+    color: var(--whatsapp);
 }
 
 .bi-instagram:hover {
-    color: #E1306C;
+    color: var(--instagram);
 }
 
 .bi-facebook:hover {
-    color: #3B5998;
+    color: var(--facebook);
 }
 
 .copy {
@@ -287,4 +303,119 @@ ul li.active a {
     padding-top: 5px;
     color: black;
     font-size: 0.8rem; 
+}
+
+
+
+
+/* Responsive celular  */
+
+@media (max-width: 800px) {
+
+/* Menu configuração do tamanho */
+#menu {
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 20%;
+    max-width: 70px;
+    height: 3rem;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: width 0.5s, height 0.5s, margin 0.5s;
+    transition: 0.3s linear;
+}
+
+#menu.active {
+    background-color: var(--dark-blue);
+    margin: 0;
+    padding-top: 30px;
+    padding-left: 30px;
+
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s linear;
+}
+
+
+/* Linhhas */
+.line {
+    background-color: var(--blue-gray);
+    width: 60%;
+    height: 5px;
+    border-radius: 1rem;
+    margin-left: 10%;
+    margin-top: 40px;
+}
+
+
+.conta {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.chat {
+    margin-bottom: 30px;
+}
+
+.config {
+    margin-bottom: 30px;
+}
+
+.ajuda {
+    margin-bottom: 0px;
+}
+
+.logout {
+    margin-top: 40px;
+}
+
+
+
+/* Content */
+
+#content {
+    margin-left: 0%;
+    margin-top: 20%;
+}
+
+
+/* Animação de cor para mobile */
+ 
+.expandir, ul li a, .history-item, .social-icon i .bi {
+    transition: 0.1s ease;
+}
+
+/* Menu lateral */
+
+.expandir:active {
+    color: var(--blue-gray);
+}
+
+ul li:active a {
+    color: var(--blue-gray);
+}
+
+/* Footer */
+
+.bi-gitlab:active {
+    color: var(--gitlab);
+}
+
+.bi-whatsapp:active {
+    color: var(--whatsapp);
+}
+
+.bi-instagram:active {
+    color: var(--instagram);
+}
+
+.bi-facebook:active {
+    color: var(--facebook);
+}
+
 }

@@ -76,53 +76,71 @@
 
         <!-- Content chat-bot -->
         <div id="content">
-            <div class="container-chat">
-                <div class="item titulo">
+            <div id="chat-bot-container" class="container-chat">
+                <div class="grup-chat titulo">
                     <h2>Chat Bot da Empresa X</h2>
                 </div>
-                <div class="item titulo-history-box">
-                    <h3>Últimas cinco conversas </h3>
+                <div class="grup-chat titulo-history-box">
+                    <i class="bi bi-list" id="btn-exp-cb"></i>
+                    <br>
+                    <h3 class="txt-titulo-history">Últimas 5 conversas </h3>
                 </div>
-                <div class="item principal">
-                    <div id="chat-box">
-                        <div id="chat-log"></div>
+                <div class="grup-chat principal">
+                    <div id="chat-log">
+                        <div class="message-user"></div>
+                        <div class="message-bot"></div>
                     </div>
                     <div class="input-container">
                         <input type="text" id="user-input" placeholder="Faça uma pergunta...">
-                        <button id="send-btn">Enviar</button>
+                        <button id="send-btn"><i class="bi bi-send"></i></button>
                     </div>
                 </div>
-                <div class="item history-box">
+                <div class="grup-chat history-box">
                     <div class="history-log">
-                        <span>
-                            <i class="bi bi-journal-text"></i>
-                        </span>
-                        <span class="txt">10/09/2024</span>
-                        <br><br>
-                        <span>
-                            <i class="bi bi-journal-text"></i>
-                        </span>
-                        <span class="txt">25/09/2024</span>
-                        <br><br>
-                        <span>
-                            <i class="bi bi-journal-text"></i>
-                        </span>
-                        <span class="txt">01/10/2024</span>
-                        <br><br>
-                        <span>
-                            <i class="bi bi-journal-text"></i>
-                        </span>
-                        <span class="txt">02/10/2024</span>
-                        <br><br>
-                        <span>
-                            <i class="bi bi-journal-text"></i>
-                        </span>
-                        <span class="txt">03/10/2024</span>
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">10/09/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">25/09/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">01/10/2024</span>
+                             <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">02/10/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">03/10/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    </div>
+                    <div class="clear-history-log">
+                        <button type="button" class="button-trash">
+                            <span><i class="bi bi-trash"></i></span> 
+                            Excluir tudo
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- JS para ativar e desativar o menu e indicar a opção escolhida -->
+        <script src="../static/javascript/sidebarMenu.js"></script>
+
+        <!-- Fazer a interação com o chatgpt -->
         <script src="../static/javascript/app.js"></script>
 
         
