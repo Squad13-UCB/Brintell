@@ -132,8 +132,7 @@ Descrição: A maioria da população idosa têm dificuldade em usar tecnologias
 Orientações Técnicas para o Desenvolvimento
 
 1. Integração da API do WhatsApp
-
-   - Utilizar a API do WhatsApp para enviar e receber mensagens. Pesquisar e ver como integrar isto com o Python.
+   Utilizar a API do WhatsApp para enviar e receber mensagens. Pesquisar e ver como integrar isto com o Python.
 
 2. Desenvolvimento dos Manuais/Tutoriais
    - Criar tutoriais (Prompts) simples e claros, com linguagem acessível e explicativa.
@@ -144,7 +143,6 @@ Orientações Técnicas para o Desenvolvimento
 
 Este projeto tem como foco proporcionar aprendizado prático e colaborativo em várias áreas do desenvolvimento de software. 
 Incentivamos todos a compartilhar suas ideias, ajudar uns aos outros e aproveitar essa oportunidade para adquirir novas habilidades!
-
 
 ---
 
