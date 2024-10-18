@@ -30,7 +30,7 @@ def get_db_connection():
 	return conn
 
 # Configuração da API OpenAI
-openai.api_key = 
+# openai.api_key = 
 
 @app.route('/')
 def index_html():
