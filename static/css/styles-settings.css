@@ -1,0 +1,36 @@
+
+/* Content */
+
+#content {
+    flex: 1;
+    min-width: auto;
+    min-height: auto;
+    margin-top: 5%;
+    padding: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    color: white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Responsive celular  */
+
+@media (max-width: 800px) {
+
+/* Content */
+#content {
+    margin-left: 0%;
+    margin-top: 20%;
+}
+
+
+}

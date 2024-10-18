@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Projeto Chat - Mentoria Católica</title>
+    
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Getbootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Css do site-->
+    <link rel="stylesheet" href="../static/css/styles-chat-bot.css">
+    
+    
+    <!-- Css padrão - Siderbar e Footer -->
+        <link rel="stylesheet" href="../static/css/styles-standard-siderbar.css">
+        <link rel="stylesheet" href="../static/css/styles-standard-footer.css">
+
+</head>
+<body>
+    <div id="container">
+        <!-- Sidebar -->
+		<script src="../static/javascript/sidebarMenu.js"></script>
+		
+        <!-- Content chat-bot -->
+        <div id="content">
+            <div id="chat-bot-container" class="container-chat">
+                <div class="grup-chat titulo">
+                    <h2>Chat Bot da Empresa X</h2>
+                </div>
+                <div class="grup-chat titulo-history-box">
+                    <i class="bi bi-list" id="btn-exp-cb"></i>
+                    <br>
+                    <h3 class="txt-titulo-history">Últimas 5 conversas </h3>
+                </div>
+                <div class="grup-chat principal">
+                    <div id="chat-log">
+                        <div class="message-user"></div>
+                        <div class="message-bot"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="user-input" placeholder="Faça uma pergunta...">
+                        <button id="send-btn"><i class="bi bi-send"></i></button>
+                    </div>
+                </div>
+                <div class="grup-chat history-box">
+                    <div class="history-log">
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">10/09/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">25/09/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">01/10/2024</span>
+                             <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">02/10/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    
+                        <div class="history-item">
+                            <span><i class="bi bi-journal-text"></i></span>
+                            <span class="txt">03/10/2024</span>
+                            <span><i class="bi bi-trash"></i></span>
+                        </div>
+                    </div>
+                    <div class="clear-history-log">
+                        <button type="button" class="button-trash">
+                            <span><i class="bi bi-trash"></i></span> 
+                            Excluir tudo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Rodapé -->
+	<script src="../static/javascript/footer.js"></script>
+
+	<!-- Fazer a interação com o chatgpt -->
+	<script src="../static/javascript/app.js"></script>
+</body>
+</html>

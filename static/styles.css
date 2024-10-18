@@ -38,3 +38,21 @@ body {
 #send-btn:hover {
     background-color: #0056b3;
 }
+
+
+#auth_form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	height: 500px;
+}
+
+
+#auth_form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	height: 500px;
+}
