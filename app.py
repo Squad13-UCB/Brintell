@@ -31,7 +31,6 @@ def get_db_connection():
 
 # Configuração da API OpenAI
 
-
 @app.route('/')
 def index_html():
 	"""
