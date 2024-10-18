@@ -30,6 +30,7 @@ def get_db_connection():
 	return conn
 
 # Configuração da API OpenAI
+openai.api_key = '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'
 
 @app.route('/')
 def index_html():
