@@ -23,4 +23,3 @@ start.sh
 
 # Ignorar o próprio Git
 .git/
-
