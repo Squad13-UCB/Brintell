@@ -1,0 +1,12 @@
+backend/venv
+backend/services/__pycache__/
+backend/utils/__pycache__/
+backend/__pycache__/
+backend/.env
+backend/app.log
+backend/requirements.txt
+requirements.txt
+docker-compose.yml
+Dockerfile
+start.sh
+\.git
