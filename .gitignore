@@ -8,5 +8,5 @@ backend/requirements.txt
 requirements.txt
 docker-compose.yml
 Dockerfile
-start.sh
+.\start.sh
 \.git
