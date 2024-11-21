@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+/* Variaveis globais */
+:root { 
+    --dark-blue: #131c23;
+    --blue: #2274a4;
+    --light-blue: #4882c2;
+    --blue-gray: #2f4858; 
+    --dark-gray-blue: #020303;     
+    --gray: #86898e;
+    --light-gray: #7d8e98;
+
+    --gitlab: #FCA121;
+    --whatsapp: #25D366;
+    --instagram: #E1306C;
+    --facebook: #3B5998;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    word-break: keep-all;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    background-color: var(--dark-blue);
+}
+
+
+/* Container */
+#container {
+    overflow: hidden;
+}
+
+/* Content */
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 3rem 1rem;
+    margin-left: 9rem;
+    overflow-y: auto;
+    color: white;
+}
+
+#content.active {
+    margin-left: 12rem;
+}
+
+button, select {
+    cursor: pointer;
+}
+
+
+.button-field-big {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--blue-gray);
+    border-radius: 0.8rem;
+    min-width: 13rem;
+    width: 100%;
+    max-width: 15rem;
+    height: 2.5rem;
+    padding: .8rem;
+
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: .2s ease;
+}
+
+.button-field-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--blue-gray);
+    border-radius: 0.8rem;
+    min-width: 8rem;
+    width: 100%;
+    max-width: 10rem;
+    height: 2.5rem;
+    padding: .8rem;
+
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: .2s ease;
+}
+
+.button-field-big:hover {
+    background: var(--light-blue);
+    transform: translateY(-.2rem);
+    box-shadow: 0rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+}
+
+.button-field-small:hover {
+    background: var(--light-blue);
+    transform: translateY(-.2rem);
+    box-shadow: 0rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 800px) {
+
+    /* Container */
+    #container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    /* Content */
+    #content {
+        margin-top: 10%;
+        margin-left: 0;
+    }
+
+    #content.active {
+        margin-top: 10%;
+        margin-left: 0;
+    }
+}

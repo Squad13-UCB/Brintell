@@ -1,0 +1,44 @@
+.table-box {
+	background: #F5F5F5;
+	width: 100%;
+	max-width: 90rem;
+	border-radius: 3rem;
+	padding: 2rem 4rem 1rem 4rem;
+	color: black;
+	line-height: 1.6;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+  
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--blue-gray);
+    border-radius: 0.8rem;
+    padding: .8rem;
+
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: .2s ease;
+}
+
+button:hover {
+	background: var(--light-blue);
+}

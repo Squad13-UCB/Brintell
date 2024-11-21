@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: briidb
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./bancodedados/db.sql/:/docker-entrypoint-initdb.d/db.sql
+    networks:
+      - db_network
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000" 
+
+    volumes:
+      - .:/app  # Mounts the current directory to /app in the container
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensures real-time logging
+    command: >
+      /bin/bash -c "python backend/app.py"
+    networks:
+      - db_network
+  
+volumes:
+  postgres_data:
+
+networks:
+  db_network:

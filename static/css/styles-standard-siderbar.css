@@ -1,0 +1,269 @@
+/* Sidebar */
+
+/* Menu configuração do tamanho */
+#menu {
+    background: var(--dark-gray-blue);
+    border-right: 7px solid var(--blue-gray);
+    height: 100%;
+    width: 9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 1rem 0rem 1rem;
+    overflow: hidden;
+}
+
+#menu.active {
+    min-width: 15rem;
+    padding-left: 1rem;
+}
+
+/* Linhhas */
+.line {
+    background-color: var(--blue-gray);
+    width: 90%;
+    height: 5px;
+    border-radius: 1rem;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+/* Parte de cima do menu*/
+#top-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#menu.active #top-menu {
+    width: 100%;
+    height: 13%;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+#menu.active #btn-exp { 
+    padding-left: 1rem;
+}
+
+/* Parte do meio e de baixo do menu */
+.bnss {
+    color: white;
+    display: none;
+}
+
+#menu.active .bnss {
+    transition: 2s;
+    color: white;
+    display: inline;
+    opacity: 0;
+    animation: appear 0.6s forwards;
+    animation-delay: 0.1s;
+    transition: opacity 0.6s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#menu.active .bnss {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 1rem;
+    color: white;
+    transition: 2s;
+}
+
+#menu.active .bnss .icon {
+    display: inline;
+    font-size: 2.4rem;
+    transition: transform 0.8s; 
+}
+
+#menu.active .bnss .txt-link {
+    display: inline;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    padding-left: 0.6rem;
+    transition: opacity 0.8s;
+}
+
+.expandir {
+    margin-left: 2rem;
+    transition: 0.3s;
+    color: white;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+.expandir:hover {
+    color: var(--blue-gray);
+}
+
+#menu.active .expandir {
+    margin-left: 0%;
+    transition: margin-left 0.5s;
+    transition: 0.3s;
+}
+
+.siderbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	gap: .5rem;
+}
+
+.item-menu {
+    margin-left: 15%;
+}
+
+ul li:hover a {
+    color: var(--blue-gray);
+}
+
+ul li.active a {
+    transition: 0.4s;
+    color: var(--light-blue);
+}
+
+.item-menu a {
+    display: flex;
+    color: #fff;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s;
+}
+
+.item-menu > a > .txt-link {
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.conta {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.chat, .config, .help, .feedback {
+    margin-bottom: 1rem;
+}
+
+.chat {
+    margin-top: 1rem;
+}
+
+
+.logout {
+    margin-top: 2rem;
+}
+
+.item-menu a .icon {
+    font-size: 2rem;
+    margin-right: 60px;
+    margin-left: 1.2rem;
+    transition: 0.4s;
+}
+
+#menu.active .item-menu a .icon {
+    font-size: 2rem;
+    margin-right: 15px;
+    margin-left: 0px;
+    transition: 0.4s;
+}
+
+
+
+
+/* Responsive celular  */
+
+@media (max-width: 800px) {
+
+
+    /* Botão de ativar e desativar o siderbar */
+    .expandir {
+        background-color: var(--dark-blue); 
+        box-shadow: 0rem 0.1rem 0.5rem rgba(0, 0, 0, 0.4);
+    
+        margin-left: 23%;
+        width: 40px;   
+        height: 40px;  
+        border-radius: 50%; 
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        font-size: 28px;
+    }
+
+    /* Menu configuração do tamanho */
+    #menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: none;
+        border-right: 0;
+        padding: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+        width: 100%;
+
+        height: 3rem;
+    }
+
+
+    #menu.active {
+        position: fixed;
+        background: var(--dark-gray-blue);
+        border-right: 7px solid var(--blue-gray);
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 30px;
+
+        min-width: 100%;
+        min-height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    #menu.active .siderbar {
+        min-width: 100%;
+    }
+
+    #menu.active .bnss {
+        animation: appear 0.1s forwards;
+        transition: opacity 0s;
+    }
+
+    #menu.active .item-menu a .icon {
+        transition: 0s;
+    }
+
+    #menu.active .expandir {
+        transition: 0s;
+        background-color: unset; 
+        box-shadow: none;
+    }
+
+    /* Linhhas */
+    .line {
+        background-color: var(--blue-gray);
+        width: 60%;
+        height: 5px;
+        border-radius: 1rem;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+}

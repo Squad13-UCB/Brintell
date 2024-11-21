@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Chat - Mentoria Católica</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Getbootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Css da pagina-->
+    <link rel="stylesheet" href="../static/css/styles-profile-admin.css">
+    <!-- Css padrão - Padrão, Siderbar e Footer -->
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/styles-standard-siderbar.css">
+    <link rel="stylesheet" href="../static/css/styles-standard-footer.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <!-- JS para ativar e desativar o menu e indicar a opção escolhida -->
+        <script src="../static/javascript/sidebarMenu.js"></script>
+
+        <!-- Content Perfil do Admin -->
+        <div id="content">
+            <div id="admin-container">
+
+                <h1>Perfil do Usuário - Administrador</h1>
+                <br>
+
+                <!-- Parâmetros do Chat Bot-->
+                <div class="parametros-chat-bot__titulo">
+                    <h2>Parâmetros do Chat Bot</h2>
+                    <button type="button" id="enter-popup" class="button-explication-parameter">
+                        Explicação dos Parâmetros
+                    </button>
+                </div>
+                <form class="parameter-chat-bot" id="parameter-chat-bot" method="post" action="">
+                    <div class="box-parameter">
+                        <div class="box-field-parameter">
+                            <label for="model" class="text">Modelo da IA</label>
+                            <select name="model" id="model" class="field">
+                                <option value="gpt-3.5-turbo">GPT-3.5-TURBO</option>
+                                <option value="gpt-4">GPT-4</option>
+                            </select>
+                        </div>
+
+                        <div class="box-field-parameter">
+                            <label for="temperature" class="text">Temperatura</label>
+                            <input type="number" data-type="int" name="temperature" id="temperature" class="field" step="0.1" min="0" max="1">
+                        </div>
+
+                        <div class="box-field-parameter">
+                            <label for="max_tokens" class="text">Máximo de tokens</label>
+                            <input type="number" data-type="int" name="max_tokens" id="max_tokens" class="field" step="1" min="1" max="4096">
+                        </div>
+
+                        <div class="box-field-parameter">
+                            <label for="n" class="text">N</label>
+                            <input type="number" data-type="int" name="n" id="n" class="field" step="0.1" min="0" max="1">
+                        </div>
+
+                        <div class="box-field-parameter">
+                            <label for="frequency_penalty" class="text">Penalização de Frequência</label>
+                            <input type="number" data-type="int" name="frequency_penalty" id="frequency_penalty" class="field"
+                                step="0.1" min="0" max="2">
+                        </div>
+
+                        <div class="box-field-parameter">
+                            <label for="presence_penalty" class="text">Penalização de Presença</label>
+                            <input type="number" data-type="int" name="presence_penalty" id="presence_penalty" class="field" step="0.1"
+                                min="0" max="2">
+                        </div>
+
+                        <div class="box-field-parameter">
+                            <label for="top_p" class="text">Contexto do Histórico</label>
+                            <input type="number" data-type="int" name="top_p" id="top_p" class="field" step="1" min="1" max="4096">
+                        </div>
+
+                        <dialog id="admin-popup" class="popup">
+
+                            <div class="title-admin-popup">
+                                <h1>Explicação dos parâmetros</h1>
+                                <i id="exit-popup" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="text-admin-popup">
+                                <p>Modelo de IA</p>
+                                <ul>
+                                    <li>
+                                        Explicação: Escolha da versão do modelo de IA que será usada para respostas.
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: GPT-3.5-TURBO, GPT-4
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>Temperatura</p>
+                                <ul>
+                                    <li>
+                                        Controla a aleatoriedade das respostas, com valores maiores sendo mais
+                                        criativos.
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: 0 a 1
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>Máximo de tokens </p>
+                                <ul>
+                                    <li>
+                                        Define o tamanho máximo da resposta gerada em tokens (palavras e caracteres).
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: 1 a 4096
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>N</p>
+                                <ul>
+                                    <li>
+                                        Número de respostas para uma única chamada
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: 0 a ...
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>Penalização de frequência </p>
+                                <ul>
+                                    <li>
+                                        Penaliza a repetição de palavras ou frases já usadas na resposta.
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: 0 a 2
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>Penalização de presença </p>
+                                <ul>
+                                    <li>
+                                        Incentiva o modelo a explorar novos tópicos, reduzindo repetições.
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: 0 a 2
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>Contexto do histórico </p>
+                                <ul>
+                                    <li>
+                                        Define o quanto da conversa anterior o modelo deve "lembrar" para gerar
+                                        respostas.
+                                    </li>
+                                    <li>
+                                        Valores Disponíveis: 1 a 4096
+                                    </li>
+                                </ul>
+                            </div>
+                        </dialog>
+                    </div>
+                    <div class="box-field-parameter" style="margin-top: 15px;">
+                        <label for="instructions" class="text-instruction">Instruções do chat</label>
+                        <div class="box-textarea-instructions">
+                            <textarea name="instructions" id="instructions" name="instructions" rows="20"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="box-field-parameter">
+                        <p id="data_modificacao"></p>
+                        <p id="response-message"></p>
+                    </div>
+                    
+
+                    <div class="box-button-save-setting box-button">
+                        <button type="submit" id="button-save-setting" class="button-field-big">
+                            Salvar Configurações
+                        </button>
+                    </div>
+                </form>
+
+                <!-- E-mail e trocar e-mail -->
+                <h2>E-mail</h2>
+                <form id="mudar-email" class="email-admin" method="post" action="">
+                    <div id="response-message"></div>
+
+                    <div class="box-email-admin">
+                        <div class="box-field-email">
+                            <label for="novo_email" class="text">Novo e-mail</label>
+                            <input type="email" name="novo_email" id="novo_email" class="field"
+                                placeholder="Digite seu novo E-mail">
+                        </div>
+
+                        <div class="box-field-email">
+                            <label for="confirm-new-email" class="text">Confirmar novo e-mail</label>
+                            <input type="email" name="confirm-new-email" id="confirm-new-email" class="field"
+                                placeholder="Digite para confirmar seu novo E-mail">
+                        </div>
+                    </div>
+                    <div class="box-button-change-email box-button">
+                        <button type="submit" id="button-change-email" class="button-field-small">
+                            Trocar E-mail
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Senha e trocar senha -->
+                <h2>Senha</h2>
+                <form id="mudar-senha" class="password-admin" method="post" action="">
+                    <div id="response-message"></div>
+
+                    <div class="box-password-admin">
+                        <div class="box-field-password">
+                            <label for="senha_atual" class="text">Senha Atual</label>
+                            <input type="password" name="senha_atual" id="senha_atual" class="field"
+                                placeholder="Digite sua Senha Atual">
+                        </div>
+
+                        <div class="box-field-password">
+                            <label for="nova_senha" class="text">Nova Senha</label>
+                            <input type="password" name="nova_senha" id="nova_senha" class="field"
+                                placeholder="Digite sua nova Senha">
+                        </div>
+
+                        <div class="box-field-password">
+                            <label for="confirm-new-password" class="text">Confirmar nova Senha</label>
+                            <input type="password" name="confirm-new-password" id="confirm-new-password" class="field"
+                                placeholder="Digite para confirmar sua nova Senha">
+                        </div>
+                    </div>
+                    <div class="box-button-change-password box-button">
+                        <button type="submit" id="button-change-password" class="button-field-small">
+                            Trocar Senha
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <script src="../static/javascript/footer.js"></script>
+    <!-- Interações da Página -->
+    <script src="../static/javascript/page-interactions.js"></script>
+    <!-- Funções de formulário -->
+    <script src="../static/javascript/forms.js"></script>
+    <script>
+
+        carregarFormulario('/configuracoes-ia', 'configuracoes', ["data_modificacao"])
+            .then(parametros => {
+                const date = new Date(parametros['data_modificacao']);
+                const dia = String(date.getDate()).padStart(2, '0');      // Dia com dois dígitos
+                const mes = String(date.getMonth() + 1).padStart(2, '0'); // Mês com dois dígitos (getMonth é 0-based)
+                const ano = date.getFullYear();                          // Ano com quatro dígitos
+
+                const horas = String(date.getHours()).padStart(2, '0');   // Hora com dois dígitos
+                const minutos = String(date.getMinutes()).padStart(2, '0'); // Minutos com dois dígitos
+
+                document.getElementById('data_modificacao').textContent = `Última modificação: ${dia}/${mes}/${ano} - ${horas}:${minutos}`
+
+                prepararRequisicao('parameter-chat-bot', '/configurar-ia',
+                    (erro) => erro,
+                    (sucesso) => sucesso
+                )
+            })
+
+
+        prepararRequisicao('mudar-email', '/admin',
+            (erro) => erro,
+            (sucesso) => {
+                console.log({ sucesso });
+                return 'Email alterado com sucesso!	'
+            },
+            'PUT'
+        )
+
+        prepararRequisicao('mudar-senha', '/admin/senha',
+            (erro) => erro,
+            (sucesso) => sucesso,
+            'PUT'
+        )
+
+        const textarea = document.getElementById('instructions');
+
+        textarea.addEventListener('input', autoResize);
+
+        function autoResize() {
+            textarea.style.height = 'auto'; // Reseta a altura para calcular o tamanho correto
+            textarea.style.height = textarea.scrollHeight + 'px'; // Define a altura conforme o conteúdo
+        }
+    </script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+
+#config-ia {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Responsive celular  */
+@media (max-width: 800px) {
+
+
+}
