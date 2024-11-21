@@ -1,17 +1,26 @@
-backend/venv
+# Ignorar virtual environment
+backend/venv/
+
+# Ignorar arquivos de cache do Python
+backend/__pycache__/
 backend/services/__pycache__/
 backend/utils/__pycache__/
-backend/__pycache__/
+
+# Ignorar arquivos de configuração e logs
 backend/.env
 backend/app.log
+
+# Ignorar dependências
 backend/requirements.txt
 requirements.txt
+
+# Ignorar arquivos relacionados ao Docker
 docker-compose.yml
 Dockerfile
-<<<<<<< HEAD
-.\start.sh
-\.git
-=======
+
+# Ignorar scripts
 start.sh
-\.git
->>>>>>> 13bdb6c1d01e2088a9c621d7f4f119185d8a3543
+
+# Ignorar o próprio Git
+.git/
+
