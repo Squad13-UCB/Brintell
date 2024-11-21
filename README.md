@@ -203,7 +203,6 @@ squad-13-brintell/                 # Diretório principal do projeto, provavelme
 - **Flavio:** Interface dos Chamados Técnicos
 - **Pedro:** Interface das Páginas de Cadastro e Login
 - **Gabriel:** Desenvolvimento de Interfaces Relativas ao Usuário
-```
 
 ---
 
